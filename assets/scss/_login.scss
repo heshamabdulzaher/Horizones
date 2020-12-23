@@ -13,20 +13,50 @@
   }
 }
 
-.login-page {
+.login-wrapper {
   background-color: rgba(white, 0.97);
   border-radius: 8px;
+  overflow: hidden;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
-  padding: 40px 50px;
+  display: flex;
+  transition: all 0.5s ease-in-out;
+  &.arabic {
+    .cover {
+      transform: translateX(-100%);
+      direction: rtl;
+    }
+    .form-content {
+      transform: translateX(100%);
+      direction: rtl;
+    }
+    .form-group label {
+      left: auto;
+      right: 10px;
+    }
+  }
+  .form-content,
+  .cover {
+    flex: 1;
+    padding: 40px 60px;
+    transition: transform 250ms cubic-bezier(0.07, 1.06, 0.45, 1.06);
+  }
+  .cover {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
   .language-switcher-btn {
     padding: 8px 16px;
     font-size: 16px;
-    border: 2px solid #f1f1f1;
+    background-color: rgba(black, 0.05);
+    box-shadow: 0 2px 1px rgba(black, 0.08);
     color: $mainColor;
     font-weight: $bold;
     font-size: 18px;
     border-radius: 4px;
     cursor: pointer;
+    display: inline-block;
+    margin-bottom: 40px;
   }
   .logo {
     width: 150px;
@@ -42,7 +72,7 @@
   .form-group {
     border: 2px solid #f2f2f2;
     border-radius: 50px;
-    width: 400px;
+    width: 100%;
     display: flex;
     padding: 5px;
     margin-bottom: 32px;
@@ -86,7 +116,6 @@
       position: absolute;
       top: 0;
       left: 10px;
-      // z-index: 0;
       height: 100%;
       padding: 0 6px;
       font-size: 18px;
@@ -94,27 +123,31 @@
       display: flex;
       align-items: center;
       background-color: #fff;
-      transition: all 0.14s ease-out;
-      // display: none;
+      transition: all 120ms ease-out;
     }
     input {
       width: 100%;
       height: 100%;
       font-size: 17px;
+      direction: ltr;
     }
   }
   .forgot-password {
     text-decoration: underline;
     color: rgba($txtColor, 0.6);
   }
-  .remember-me {
+  .remember-me * {
     cursor: pointer;
   }
   .main-btn {
     margin: 40px 0 30px;
   }
-  .alt-action a {
-    color: $mainColor;
-    text-decoration: underline;
+  .alt-action {
+    display: flex;
+    a {
+      color: $mainColor;
+      text-decoration: underline;
+      margin: 0 8px;
+    }
   }
 }

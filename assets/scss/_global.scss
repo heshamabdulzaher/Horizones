@@ -5,9 +5,9 @@ $mainLightColor: #8d42cf;
 $txtColor: #3c4b62;
 
 // font weights
-$light: 400;
-$normal: 500;
-$bold: 600;
+$light: 300;
+$normal: 600;
+$bold: 800;
 
 * {
   box-sizing: border-box;
@@ -16,7 +16,7 @@ $bold: 600;
   outline: 0;
   border: 0;
   max-width: 100%;
-  font-family: 'BoosterNextFY', sans-serif;
+  font-family: 'BoosterNextFY', 'Almarai', sans-serif;
   font-weight: $normal;
 }
 

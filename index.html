@@ -19,81 +19,69 @@
       alt="wave Background"
     />
     <div class="container">
-      <section class="login-page">
-        <div class="flex__jc-between">
+      <section class="login-wrapper">
+        <!-- Form -->
+        <div class="form-content">
           <img src="./assets/img/logo.svg" alt="Horizones logo" class="logo" />
-          <div class="language-switcher-btn">AR</div>
+          <h1 data-dictionary-word-id="welcomeText">Welcome mamber!</h1>
+          <form>
+            <div class="form-group">
+              <div class="icon">
+                <img src="./assets/img/icons/email.svg" alt="Email icon" />
+              </div>
+              <div class="form-field">
+                <label for="email" data-dictionary-word-id="email">Email</label>
+                <input type="email" id="email" autocomplete="off" />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="icon">
+                <img src="./assets/img/icons/lock.svg" alt="lock icon" />
+              </div>
+              <div class="form-field">
+                <label for="password" data-dictionary-word-id="password"
+                  >Password</label
+                >
+                <input type="password" id="password" />
+              </div>
+            </div>
+            <div class="flex__jc-between__ai-center">
+              <div class="remember-me">
+                <input type="checkbox" name="rememberMe" id="rememberMe" />
+                <label for="rememberMe" data-dictionary-word-id="rememberMe"
+                  >Remember me</label
+                >
+              </div>
+              <a
+                href="#"
+                class="forgot-password"
+                data-dictionary-word-id="forgotPassword"
+                >Forgot password?</a
+              >
+            </div>
+            <div class="flex__fd-col__ai-center">
+              <button class="btn main-btn" data-dictionary-word-id="signIn">
+                Sign In
+              </button>
+              <div class="alt-action">
+                <p data-dictionary-word-id="noAccount">
+                  Don't have an account?
+                </p>
+                <a href="#" data-dictionary-word-id="signUp">Sign Up</a>
+              </div>
+            </div>
+          </form>
         </div>
-        <div class="flex__ai-center__jc-between">
-          <div class="content">
-            <h1>Welcome mamber!</h1>
-            <form>
-              <!-- Email -->
-              <div class="form-group">
-                <div class="icon">
-                  <img src="./assets/img/icons/email.svg" alt="Email icon" />
-                </div>
-                <div class="form-field">
-                  <label for="email">Email</label>
-                  <input type="email" id="email" autocomplete="off" />
-                </div>
-              </div>
-              <!-- Password -->
-              <div class="form-group">
-                <div class="icon">
-                  <img src="./assets/img/icons/lock.svg" alt="lock icon" />
-                </div>
-                <div class="form-field">
-                  <label for="password">Password</label>
-                  <input type="password" id="password" />
-                </div>
-              </div>
-              <!-- Sign in options -->
-              <div class="flex__jc-between__ai-center">
-                <div class="remember-me">
-                  <input type="checkbox" name="rememberMe" id="rememberMe" />
-                  <label for="rememberMe">Remember me</label>
-                </div>
-                <a href="#" class="forgot-password">Forgot password?</a>
-              </div>
-              <!-- Actions -->
-              <div class="flex__fd-col__ai-center">
-                <button class="btn main-btn">Sign In</button>
-                <div class="alt-action">
-                  Don't have an account? <a href="#">Sign Up</a>
-                </div>
-              </div>
-            </form>
+        <!-- cover -->
+        <div class="cover">
+          <div class="language-switcher-btn" data-dictionary-word-id="language">
+            AR
           </div>
-          <div class="banner-img">
-            <img src="./assets/img/banner.png" alt="Horizones banner image" />
-          </div>
+          <img src="./assets/img/banner.png" alt="Horizones banner image" />
         </div>
       </section>
     </div>
 
-    <script>
-      const fieldWrappers = document.querySelectorAll('.form-group');
-      const fields = document.querySelectorAll('.form-field input');
-      fieldWrappers.forEach(f => {
-        f.addEventListener('click', e => f.querySelector('input').click());
-      });
-      fields.forEach(f => {
-        f.addEventListener('focus', e => {
-          let fieldWrapper = e.target.closest('.form-group');
-          fieldWrapper.classList.add('active');
-          fieldWrapper.classList.add('visited');
-          fieldWrapper.classList.remove('empty');
-        });
-        f.addEventListener('blur', e => {
-          let fieldWrapper = e.target.closest('.form-group');
-          fieldWrapper.classList.remove('active');
-          if (!e.target.value.trim()) {
-            fieldWrapper.classList.add('empty');
-          }
-          console.log('input blured!');
-        });
-      });
-    </script>
+    <script src="./assets/js/main.js"></script>
   </body>
 </html>
